@@ -1,74 +1,94 @@
-# Hotel Management System (HMS)
+# Hotel Management System
 
-## Pages & Features
+Room management, reservations, and guest services platform.
 
-### 1. Dashboard
-- Occupancy rate (today / this week)
-- Check-ins & check-outs today
-- Revenue summary
-- Room availability snapshot
-- Pending housekeeping tasks
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Reservations
-- New reservation form (guest, room type, dates, guests count)
-- Reservation list with status filters (confirmed, pending, cancelled)
-- Calendar view of room occupancy
-- Reservation modification / cancellation
-- Group booking support
-- Confirmation email with details
+## Tech Stack
 
-### 3. Front Desk
-- Check-in workflow (verify identity, assign room, key card)
-- Check-out workflow (review charges, process payment, feedback)
-- Room assignment / upgrade
-- Guest requests & complaints log
-- Walk-in booking
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Rooms
-- Room inventory with type, floor, amenities, status
-- Room status board (available, occupied, dirty, maintenance)
-- Room type management (single, double, suite, etc.)
-- Pricing per room type (rack rate, seasonal rates)
-- Room photos & descriptions
+## Getting Started
 
-### 5. Guests
-- Guest directory with search
-- Guest profile: personal info, preferences, loyalty tier
-- Stay history & billing records
-- VIP / special request flags
-- Guest feedback & reviews
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Housekeeping
-- Daily room cleaning schedule
-- Task assignment to staff
-- Room status updates (clean, dirty, inspected)
-- Minibar & amenity replenishment tracking
-- Maintenance request logging
+## License
 
-### 7. Billing & Invoicing
-- Folio management per reservation (room charges, extras, taxes)
-- Add charges (room service, minibar, spa, etc.)
-- Split billing, group invoices
-- Payment processing & receipt
-- Outstanding balance tracking
+MIT © Mehdi Nabhani
 
-### 8. Restaurant & Services
-- Table reservation management
-- Room service order tracking
-- Spa / gym booking
-- Laundry service requests
+---
 
-### 9. Reports
-- Revenue per available room (RevPAR)
-- Average daily rate (ADR)
-- Occupancy trends
-- Guest demographics & source
-- Department-wise revenue
-- Export as PDF / CSV
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Settings
-- Hotel profile & branding
-- Tax & service charge configuration
-- Check-in / check-out time policies
-- User roles & permissions
-- Notification templates
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
